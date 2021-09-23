@@ -16,4 +16,4 @@ tree_sitter = "0.2.2"
 streamlit="0.88.0"
 
 [requires]
-python_version = "3.7.11"
+python_version = "3.7.12"
