@@ -15,12 +15,14 @@ def iniliaze_model():
     model = T5ForConditionalGeneration.from_pretrained('nielsr/codet5-small-code-summarization-ruby')
     return tokenizer,model
 
+agree = st.checkbox('Start')
 
-tokenizer,model = iniliaze_model()
-st.title('CodeT5 Summarize')
+if agree:
+    tokenizer,model = iniliaze_model()
+    st.title('CodeT5 Summarize')
 
 
-code = st.text_area('Code to analyze', '''
+    code = st.text_area('Code to analyze', '''
     public class IntegerSumExample1 {  
         public static void main(String[] args) {          
         int a = 65;  
@@ -32,8 +34,8 @@ code = st.text_area('Code to analyze', '''
     ''', height=400)
 
 
-input_ids = tokenizer(code, return_tensors="pt").input_ids
-outputs = model.generate(input_ids)
+    input_ids = tokenizer(code, return_tensors="pt").input_ids
+    outputs = model.generate(input_ids)
 
-st.subheader('Summary')
-st.write(tokenizer.decode(outputs[0], skip_special_tokens=True))
+    st.subheader('Summary')
+    st.write(tokenizer.decode(outputs[0], skip_special_tokens=True))
