@@ -1,0 +1,19 @@
+[[source]]
+name = "codet5"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+ipykernel = "~=5.2.0"
+jupyter = "*"
+
+[packages]
+pandas = "~=1.0.1"
+torch = "1.7.1"
+tensorboard = "2.4.1"
+transformers = "4.6.1"
+tree_sitter = "0.2.2"
+streamlit="0.88.0"
+
+[requires]
+python_version = "3.7.11"
